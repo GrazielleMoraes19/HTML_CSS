@@ -1,0 +1,30 @@
+body {
+    background-color: rgb(58, 196, 201);
+    font-family: 'Times New Roman', Times, serif;
+    margin: 60px;
+}
+
+h1 {
+color: aquamarine;
+font-size: 60px;
+text-align: center;
+}
+
+h2 {
+    color: black;
+    font-size: 30px;
+    text-align: left;
+}
+
+p.justificado {
+    color: blue;
+    font-size: 20px;
+    text-align: justify;
+}
+
+p.direita {
+    color: rgb(236, 11, 180);
+    font-size: 26px;
+    text-align: right;
+}
+

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brilho Fino – Joias Autênticas</title>
+  <meta name="description" content="Loja de joias com anéis, colares, brincos e alianças. Design autoral, prata 925 e ouro 18k.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0e0e10;             /* Fundo escuro elegante */
+      --card:#151518;           /* Cartões */
+      --soft:#1f1f24;           /* Bordas/superfícies */
+      --text:#eaeaf2;           /* Texto principal */
+      --muted:#b8b8c2;          /* Texto secundário */
+      --brand:#c8a96a;          /* Dourado */
+      --brand-2:#e6d5a3;        /* Dourado claro */
+      --accent:#9ad0d3;         /* Azul suave para hover */
+      --ok:#2ecc71;             /* Sucesso */
+      --err:#ff6b6b;            /* Erro */
+      --radius:16px;            /* Cantos */
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:linear-gradient(180deg,#0c0c0f, #131318 40%, #0f0f13);
+      color:var(--text); font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{width:min(1160px, 92vw); margin-inline:auto}
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50; backdrop-filter:saturate(160%) blur(8px);
+      background:rgba(10,10,12,.6); border-bottom:1px solid rgba(255,255,255,.05);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:600}
+    .brand .logo{width:36px; height:36px; display:grid; place-items:center; border-radius:12px; background:radial-gradient(circle at 30% 30%, var(--brand-2), var(--brand)); box-shadow:0 4px 16px rgba(200,169,106,.4)}
+    .brand span{font-family:"Playfair Display", serif; letter-spacing:.4px}
+    .menu{display:flex; align-items:center; gap:18px}
+    .menu a{opacity:.9}
+    .menu a:hover{opacity:1; color:var(--brand-2)}
+    .actions{display:flex; align-items:center; gap:10px}
+    .btn, button{
+      appearance:none; border:0; cursor:pointer; border-radius:999px; padding:10px 16px; font-weight:600;
+      background:linear-gradient(180deg, var(--brand-2), var(--brand)); color:#231f13; box-shadow:0 6px 18px rgba(200,169,106,.35);
+    }
+    .btn.ghost{background:transparent; color:var(--text); border:1px solid rgba(255,255,255,.12); box-shadow:none}
+    .btn.ghost:hover{border-color:var(--brand-2); color:var(--brand-2)}
+    .icon-btn{display:grid; place-items:center; width:44px; height:44px; border-radius:12px; background:var(--soft); border:1px solid rgba(255,255,255,.06)}
+    .icon-btn:hover{transform:translateY(-1px); box-shadow:var(--shadow)}
+    #mobileToggle{display:none}
+    /* Hero */
+    .hero{position:relative; padding:64px 0 48px}
+    .hero-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center}
+    .eyebrow{font-size:.8rem; text-transform:uppercase; letter-spacing:.22em; color:var(--brand-2)}
+    h1{font-family:"Playfair Display", serif; font-size:clamp(2rem, 5vw, 3.6rem); line-height:1.1; margin:.2em 0 .3em}
+    .lead{color:var(--muted)}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:18px; display:grid; grid-template-columns:88px 1fr; gap:12px; align-items:center}
+    .hero-card img{width:88px; height:88px; object-fit:cover; border-radius:14px; border:1px solid rgba(255,255,255,.12)}
+    .hero-visual{position:relative; border-radius:28px; overflow:hidden; aspect-ratio:4/5; background:radial-gradient(circle at 70% 30%, rgba(255,255,255,.06), transparent 60%)}
+    .hero-visual img{width:100%; height:100%; object-fit:cover; filter:contrast(1.05) saturate(1.05)}
+    .badge{position:absolute; bottom:14px; left:14px; background:rgba(0,0,0,.5); border:1px solid rgba(255,255,255,.15); padding:10px 12px; border-radius:12px; backdrop-filter:blur(6px); font-weight:600}
+    /* Sections */
+    section{padding:56px 0}
+    .section-title{display:flex; align-items:flex-end; justify-content:space-between; gap:18px; margin-bottom:18px}
+    .kicker{color:var(--muted)}
+    /* Grid Produtos */
+    .grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
+    .card{
+      background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:24px; overflow:hidden; box-shadow:var(--shadow);
+      display:flex; flex-direction:column
+    }
+    .thumb{aspect-ratio:1/1; background:linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.02));}
+    .thumb img{width:100%; height:100%; object-fit:cover}
+    .info{padding:14px 14px 10px}
+    .title{font-weight:600}
+    .price{font-weight:700; color:var(--brand-2)}
+    .meta{display:flex; align-items:center; justify-content:space-between; gap:8px; padding:0 14px 14px}
+    .chip{font-size:.82rem; padding:6px 10px; border:1px solid rgba(255,255,255,.12); border-radius:999px; color:var(--muted)}
+    .actions-row{display:flex; gap:8px}
+    .btn.small{padding:8px 12px; font-size:.92rem}
+
+    /* Vitrine em carrossel simples */
+    .carousel{display:flex; gap:14px; overflow:auto; scroll-snap-type:x mandatory; padding:8px 2px}
+    .carousel > .chip{scroll-snap-align:start; white-space:nowrap}
+
+    /* Sobre & Vantagens */
+    .features{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .feature{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:20px; padding:18px}
+    .feature h3{margin:.4em 0}
+
+    /* Newsletter */
+    .newsletter{display:grid; grid-template-columns:2fr 3fr; gap:18px; align-items:center; background:linear-gradient(180deg, rgba(200,169,106,.15), rgba(200,169,106,.05)); border:1px solid rgba(255,255,255,.08); border-radius:24px; padding:18px}
+    .newsletter form{display:flex; gap:8px}
+    .newsletter input{flex:1; padding:12px 14px; border-radius:999px; border:1px solid rgba(255,255,255,.14); background:rgba(0,0,0,.35); color:var(--text)}
+
+    /* Contato */
+    .contact{display:grid; grid-template-columns:1.1fr .9fr; gap:18px}
+    .card-lite{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.06); border-radius:20px; padding:16px}
+    .contact form{display:grid; gap:10px}
+    .contact input, .contact textarea{padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.14); background:#0e0e12; color:var(--text)}
+    .contact textarea{min-height:120px; resize:vertical}
+
+    /* Footer */
+    footer{border-top:1px solid rgba(255,255,255,.08); padding:26px 0 40px; color:var(--muted)}
+    .footer-grid{display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:18px}
+    .social{display:flex; gap:8px}
+
+    /* Toast/Cart Modal */
+    .toast{position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:#0e1512; border:1px solid rgba(255,255,255,.12); color:#c8f5d5; padding:12px 16px; border-radius:12px; box-shadow:var(--shadow); opacity:0; pointer-events:none; transition:.25s ease}
+    .toast.show{opacity:1; pointer-events:auto}
+
+    /* Responsivo */
+    @media (max-width: 1024px){
+      .grid{grid-template-columns:repeat(3,1fr)}
+      .hero-grid{grid-template-columns:1fr;}
+      .contact{grid-template-columns:1fr}
+      .newsletter{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:2fr 1fr 1fr}
+    }
+    @media (max-width: 680px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .menu{display:none}
+      #mobileToggle{display:grid}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#">
+        <div class="logo" aria-hidden="true">💎</div>
+        <span>Brilho Fino</span>
+      </a>
+      <nav class="menu" aria-label="Principal">
+        <a href="#novidades">Novidades</a>
+        <a href="#aneis">Anéis</a>
+        <a href="#colares">Colares</a>
+        <a href="#brincos">Brincos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <div class="actions">
+        <button class="btn ghost" id="searchBtn" aria-label="Buscar">Buscar</button>
+        <button class="icon-btn" id="cartBtn" aria-label="Abrir carrinho">🛒</button>
+        <button class="icon-btn" id="mobileToggle" aria-label="Abrir menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Coleção 2025</div>
+        <h1>Joias que contam <br> a sua história</h1>
+        <p class="lead">Peças autorais em prata 925 e ouro 18k. Feitas para durar, pensadas para brilhar em cada detalhe.</p>
+        <div style="display:flex; gap:10px; margin-top:14px">
+          <a class="btn" href="#novidades">Comprar agora</a>
+          <a class="btn ghost" href="#sobre">Saiba mais</a>
+        </div>
+        <div class="hero-card" style="margin-top:18px">
+          <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=600&auto=format&fit=crop" alt="Detalhe de anel de ouro com pedra" />
+          <div>
+            <div class="title">Selo de Autenticidade</div>
+            <div class="kicker">Garantia vitalícia de polimento e ajuste em peças da linha premium.</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?q=80&w=1200&auto=format&fit=crop" alt="Modelo usando colares em camadas"/>
+        <div class="badge">Frete grátis acima de R$ 299</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categorias rápidas -->
+  <section id="novidades">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <h2 style="margin:0 0 6px; font-family: 'Playfair Display', serif;">Novidades & Destaques</h2>
+          <div class="kicker">Escolhas selecionadas para você</div>
+        </div>
+        <div class="carousel" aria-label="Filtros rápidos">
+          <button class="chip" data-filter="all">Tudo</button>
+          <button class="chip" data-filter="anel">Anéis</button>
+          <button class="chip" data-filter="colar">Colares</button>
+          <button class="chip" data-filter="brinco">Brincos</button>
+          <button class="chip" data-filter="alianca">Alianças</button>
+          <button class="chip" data-filter="prata">Prata 925</button>
+          <button class="chip" data-filter="ouro">Ouro 18k</button>
+        </div>
+      </div>
+
+      <div class="grid" id="productGrid">
+        <!-- Card 1 -->
+        <article class="card" data-tags="anel ouro">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1543294001-7a3c31f2b1b0?q=80&w=1200&auto=format&fit=crop" alt="Anel solitário em ouro 18k" />
+          </div>
+          <div class="info">
+            <div class="title">Anel Solitário Aurora</div>
+            <div class="kicker">Ouro 18k • Zircônia premium</div>
+          </div>
+          <div class="meta">
+            <span class="price">R$ 789,90</span>
+            <div class="actions-row">
+              <button class="btn small addCart">Adicionar</button>
+              <button class="btn small ghost details">Detalhes</button>
+            </div>
+          </div>
+        </article>
+        <!-- Card 2 -->
+        <article class="card" data-tags="colar prata">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1523292562811-8fa7962a78c8?q=80&w=1200&auto=format&fit=crop" alt="Colar em prata 925 com pingente" />
+          </div>
+          <div class="info">
+            <div class="title">Colar Gota D'Água</div>
+            <div class="kicker">Prata 925 • Acabamento polido</div>
+          </div>
+          <div class="meta">
+            <span class="price">R$ 349,00</span>
+            <div class="actions-row">
+              <button class="btn small addCart">Adicionar</button>
+              <button class="btn small ghost details">Detalhes</button>
+            </div>
+          </div>
+        </article>
+        <!-- Card 3 -->
+        <article class="card" data-tags="brinco ouro">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1617038260897-5cc4a4d2f0e9?q=80&w=1200&auto=format&fit=crop" alt="Brincos argola ouro" />
+          </div>
+          <div class="info">
+            <div class="title">Argolas Luna</div>
+            <div class="kicker">Ouro 18k • Leve e hipoalergênico</div>
+          </div>
+          <div class="meta">
+            <span class="price">R$ 559,90</span>
+            <div class="actions-row">
+              <button class="btn small addCart">Adicionar</button>
+              <button class="btn small ghost details">Detalhes</button>
+            </div>
+          </div>
+        </article>
+        <!-- Card 4 -->
+        <article class="card" data-tags="alianca prata">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop" alt="Par de alianças em prata" />
+          </div>
+          <div class="info">
+            <div class="title">Par de Alianças Sereno</div>
+            <div class="kicker">Prata 925 • Comfort fit</div>
+          </div>
+          <div class="meta">
+            <span class="price">R$ 899,00</span>
+            <div class="actions-row">
+              <button class="btn small addCart">Adicionar</button>
+              <button class="btn small ghost details">Detalhes</button>
+            </div>
+          </div>
+        </article>
+        <!-- Card 5 -->
+        <article class="card" data-tags="anel prata">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220e?q=80&w=1200&auto=format&fit=crop" alt="Anel prata com textura" />
+          </div>
+          <div class="info">
+            <div class="title">Anel Textura Gaia</div>
+            <div class="kicker">Prata 925 • Feito à mão</div>
+          </div>
+          <div class="meta">
+            <span class="price">R$ 279,00</span>
+            <div class="actions-row">
+              <button class="btn small addCart">Adicionar</button>
+              <button class="btn small ghost details">Detalhes</button>
+            </div>
+          </div>
+        </article>
+        <!-- Card 6 -->
+        <article class="card" data-tags="colar ouro">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1520965230-6c67a0f1b1b2?q=80&w=1200&auto=format&fit=crop" alt="Colar ponto de luz" />
+          </div>
+          <div class="info">
+            <div class="title">Ponto de Luz Stella</div>
+            <div class="kicker">Ouro 18k • Brilho intenso</div>
+          </div>
+          <div class="meta">
+            <span class="price">R$ 429,00</span>
+            <div class="actions-row">
+              <button class="btn small addCart">Adicionar</button>
+              <button class="btn small ghost details">Detalhes</button>
+            </div>
+          </div>
+        </article>
+        <!-- Card 7 -->
+        <article class="card" data-tags="brinco prata">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1546948630-27e6b66eaf86?q=80&w=1200&auto=format&fit=crop" alt="Brincos prata pingente" />
+          </div>
+          <div class="info">
+            <div class="title">Brincos Viena</div>
+            <div class="kicker">Prata 925 • Design clássico</div>
+          </div>
+          <div class="meta">
+            <span class="price">R$ 219,00</span>
+            <div class="actions-row">
+              <button class="btn small addCart">Adicionar</button>
+              <button class="btn small ghost details">Detalhes</button>
+            </div>
+          </div>
+        </article>
+        <!-- Card 8 -->
+        <article class="card" data-tags="alianca ouro">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1518600506278-4e8ef466b810?q=80&w=1200&auto=format&fit=crop" alt="Par de alianças ouro" />
+          </div>
+          <div class="info">
+            <div class="title">Alianças Eternité</div>
+            <div class="kicker">Ouro 18k • Acabamento espelhado</div>
+          </div>
+          <div class="meta">
+            <span class="price">R$ 2.490,00</span>
+            <div class="actions-row">
+              <button class="btn small addCart">Adicionar</button>
+              <button class="btn small ghost details">Detalhes</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre / Garantias -->
+  <section id="sobre">
+    <div class="container">
+      <div class="features">
+        <div class="feature">
+          <div aria-hidden="true">🔒</div>
+          <h3>Garantia de Autenticidade</h3>
+          <p>Certificados de pureza acompanhando cada peça. Polimento e ajuste gratuitos na linha premium.</p>
+        </div>
+        <div class="feature">
+          <div aria-hidden="true">🚚</div>
+          <h3>Envio Rápido</h3>
+          <p>Pedidos confirmados até 12h são enviados no mesmo dia útil. Frete grátis a partir de R$ 299.</p>
+        </div>
+        <div class="feature">
+          <div aria-hidden="true">💬</div>
+          <h3>Atendimento Humano</h3>
+          <p>Whatsapp e e-mail com resposta média de 1h em horário comercial.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section>
+    <div class="container newsletter">
+      <div>
+        <h3 style="margin:.2em 0 .4em; font-family: 'Playfair Display', serif;">Ganhe 10% OFF na 1ª compra</h3>
+        <p class="kicker">Assine nossa newsletter para receber lançamentos e ofertas exclusivas.</p>
+      </div>
+      <form id="newsletterForm" aria-label="Inscrição de newsletter">
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+        <button class="btn" type="submit">Quero receber</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato">
+    <div class="container contact">
+      <div class="card-lite">
+        <h3 style="margin-top:0; font-family: 'Playfair Display', serif;">Fale com a gente</h3>
+        <p class="kicker">Tem dúvida sobre tamanho, material ou personalização? Escreva pra nós.</p>
+        <form id="contactForm">
+          <input type="text" name="nome" placeholder="Seu nome" required>
+          <input type="email" name="email" placeholder="Seu e-mail" required>
+          <textarea name="mensagem" placeholder="Mensagem" required></textarea>
+          <button class="btn" type="submit">Enviar mensagem</button>
+        </form>
+      </div>
+      <div class="card-lite">
+        <h3 style="margin-top:0; font-family: 'Playfair Display', serif;">Loja física</h3>
+        <p>Rua Exemplo, 123 – Centro, Sua Cidade/UF</p>
+        <p>Seg a Sex: 10h às 18h • Sáb: 10h às 14h</p>
+        <div class="social" aria-label="Redes sociais">
+          <a class="chip" href="#" aria-label="Instagram">Instagram</a>
+          <a class="chip" href="#" aria-label="WhatsApp">WhatsApp</a>
+          <a class="chip" href="#" aria-label="TikTok">TikTok</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand"><div class="logo">💎</div><span>Brilho Fino</span></div>
+        <p style="margin-top:8px">© <span id="year"></span> Brilho Fino Joias. Todos os direitos reservados.</p>
+      </div>
+      <div>
+        <div class="title">Categorias</div>
+        <ul style="list-style:none; padding:0; margin:8px 0 0">
+          <li><a href="#aneis">Anéis</a></li>
+          <li><a href="#colares">Colares</a></li>
+          <li><a href="#brincos">Brincos</a></li>
+          <li><a href="#novidades">Lançamentos</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="title">Institucional</div>
+        <ul style="list-style:none; padding:0; margin:8px 0 0">
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Garantia</a></li>
+          <li><a href="#">Trocas & Devoluções</a></li>
+          <li><a href="#">Privacidade</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="title">Atendimento</div>
+        <ul style="list-style:none; padding:0; margin:8px 0 0">
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="#">Pedidos</a></li>
+          <li><a href="#">Rastrear envio</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Adicionado ao carrinho ✅</div>
+
+  <!-- JSON-LD: Estrutura para SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "JewelryStore",
+      "name": "Brilho Fino Joias",
+      "image": "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?q=80&w=1200&auto=format&fit=crop",
+      "url": "https://exemplo.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Exemplo, 123",
+        "addressLocality": "Sua Cidade",
+        "addressRegion": "UF",
+        "postalCode": "00000-000",
+        "addressCountry": "BR"
+      },
+      "openingHours": "Mo-Fr 10:00-18:00, Sa 10:00-14:00",
+      "priceRange": "$$$"
+    }
+  </script>
+
+  <!-- Scripts básicos -->
+  <script>
+    const yearEl = document.getElementById('year');
+    yearEl.textContent = new Date().getFullYear();
+
+    const toast = document.getElementById('toast');
+    function showToast(msg){
+      toast.textContent = msg || 'Ação concluída';
+      toast.classList.add('show');
+      setTimeout(()=> toast.classList.remove('show'), 1800);
+    }
+
+    // Filtro rápido por chips
+    const chips = document.querySelectorAll('.chip[data-filter]');
+    const grid = document.getElementById('productGrid');
+    const cards = Array.from(grid.children);
+    chips.forEach(chip => chip.addEventListener('click', () => {
+      const tag = chip.dataset.filter;
+      cards.forEach(card => {
+        const ok = tag === 'all' || card.dataset.tags.includes(tag);
+        card.style.display = ok ? 'flex' : 'none';
+      });
+    }));
+
+    // Botões de carrinho
+    document.querySelectorAll('.addCart').forEach(btn => btn.addEventListener('click', () => {
+      showToast('Adicionado ao carrinho ✅');
+    }));
+
+    // "Detalhes" abre uma alerta simples (substitua por modal/rota real)
+    document.querySelectorAll('.details').forEach(btn => btn.addEventListener('click', (e) => {
+      const card = e.target.closest('.card');
+      const name = card.querySelector('.title').textContent.trim();
+      alert('Detalhes do produto: ' + name + '\n\nSubstitua este alert por uma página de produto.');
+    }));
+
+    // Newsletter fake
+    document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('Cadastro realizado! 💌');
+      e.target.reset();
+    });
+
+    // Contato fake
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('Mensagem enviada! ✨');
+      e.target.reset();
+    });
+
+    // Mobile menu (toggle simples: mostra/oculta nav)
+    const toggle = document.getElementById('mobileToggle');
+    const menu = document.querySelector('nav.menu');
+    toggle.addEventListener('click', () => {
+      const visible = getComputedStyle(menu).display !== 'none';
+      menu.style.display = visible ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>

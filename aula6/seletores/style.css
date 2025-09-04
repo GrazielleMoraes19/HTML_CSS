@@ -1,0 +1,133 @@
+p {
+    color: blue;
+}
+
+#titulo-principal {
+    background-color: yellow;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+.h2 {
+    color: green;
+}
+
+li {
+    color: red;
+}
+
+#div1 {
+    background-color: blueviolet;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+#div2 {
+    background-color: aqua;
+    padding: 15px;
+}
+
+.agrupamento p, h2,h3 {
+    color: purple;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#p {
+    color: rgb(255, 0, 144);
+    text-align: center;
+}
+
+#link-google {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#link-youtube {
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.p {
+    font-weight: bold;
+    color: black;
+}
+
+img {
+    border: 3px solid rgb(255, 0, 0);
+    border-radius: 10px;
+    margin: 10px;
+    width: 200px;
+}
+
+.paragrafo1 {
+    font-weight: bold;
+    color: brown;
+}
+
+.paragrafo2 {
+    color: rgb(134, 110, 255);
+}
+
+.paragrafo3 {
+    color: rgb(255, 0, 183);
+}
+
+#h1 {
+    font-family: Arial;
+    color: aqua;
+}
+
+.paragrafo4 {
+    font-weight: bold;
+}
+
+.paragrafo5  {
+   font-style: italic;
+}
+
+.paragrafo6 {
+    text-decoration: underline;
+}
+
+.divh3 {
+    font-weight: bold;
+    color: coral;
+    text-align: center;
+}
+
+#div5 {
+    color: blue;
+}
+
+#div6 {
+    color: red;
+}
+
+#div7 {
+    color: green;
+}
+
+.destaque {
+    color: red;
+    font-weight: bold;
+}
+
+#div8 {
+    border: 5px solid red;
+    background-color: blueviolet;
+}
+
+.sublinhado {
+      text-decoration: underline;
+      color: rgb(255, 132, 0); 
+    }
+
+
+ h1, p, a {
+      color: darkblue;  
+      font-family: Arial, sans-serif;
+    }
+

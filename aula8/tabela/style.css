@@ -1,0 +1,136 @@
+.tabela1 {
+    border: solid black;
+}
+ .tabela2 th {
+    background-color: gray;
+    
+ }
+ .tabela2 {
+    border: solid black;
+ }
+
+ .tabela3 td {
+    color: blue;
+    
+ }
+ .tabela3 {
+    border: solid black;
+ }
+
+ .tabela4 {
+    font-family: Arial;
+    
+ }
+ .tabela4 {
+    border: solid black;
+ }
+
+ .tabela5 th {
+    font-size: 30px;
+    
+ }
+ .tabela5 {
+    border: solid black;
+ }
+
+ .tabela6 td {
+    background-color: bisque;
+    
+ }
+ .tabela6 {
+    border: solid black;
+ }
+
+ .tabela7 td {
+    text-align: center;
+    
+ }
+ .tabela7 {
+    border: solid black;
+ }
+
+ .tabela8 {
+    border: solid black 15px;
+ }
+.tabela9 th{
+    color: red;
+}
+.tabela9 {
+    border: solid black;
+}
+
+
+
+.tabela10 th {
+   padding-bottom: 20px;
+}
+.tabela10 td {
+    margin: 50px;
+    text-align: left;
+}
+
+.tabela10 {
+    border: solid black;
+}
+.tabela11 {
+    border: solid black;
+}
+.fruta {
+    font-style: italic;
+}
+.tabela12 td  {
+      font-weight: bold; 
+    }
+
+    .tabela13{
+        border: solid black;
+    }
+    .linha1{
+        background-color: blueviolet;
+    }
+
+    .tabela14 td {
+        color: green;
+    }
+    .tabela14 {
+        border: solid black;
+    }
+    
+    .tabela15 {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 20px;
+    }
+
+    .tabela16 {
+        border: solid black;
+    }
+    .linha2 {
+        background-color: aquamarine;
+    }
+
+    .tabela17 th {
+        background-color: black;
+        color: white;
+    }
+
+    .tabela18 {
+        text-transform: uppercase;
+    }
+
+    .tabela19 th {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .tabela19 {
+        border: solid black;
+    }
+
+    .tabela20 {
+        border: solid black 8px;
+        padding: auto;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: rgb(255, 0, 0);
+    }
+    .tabela20 th {
+        background-color: black;
+        color: white;
+    }

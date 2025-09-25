@@ -1,0 +1,21 @@
+
+    table {
+      border: solid black   ;
+      width: 80%;
+      margin: auto;
+      text-align: center;
+    }
+    th, td {
+      border: 2px solid #333;
+      padding: 8px;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    .pontos {
+      font-weight: bold;
+      color: blue;
+    }
+    .lider {
+      background-color: #8d67ff;
+    }

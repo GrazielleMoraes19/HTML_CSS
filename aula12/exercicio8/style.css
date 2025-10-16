@@ -1,0 +1,17 @@
+ nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        main {
+            display: flex;
+            gap: 20px;
+        }
+        main article {
+            flex: 2;
+        }
+        aside {
+            flex: 1;
+            background-color: #e8f5e9;
+        }

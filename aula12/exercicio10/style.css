@@ -1,0 +1,11 @@
+        section {
+    border-left: 4px solid #000000;
+      padding: 0.8rem 1rem;
+      margin-bottom: 1rem;
+      background: #cdcdcd;
+      border-radius: 6px;
+ }
+        mark {
+            background-color: #ffeb3b;
+            padding: 0 5px;
+        }

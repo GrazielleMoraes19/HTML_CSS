@@ -1,0 +1,72 @@
+body, h1, h2, h3, h4, h5 {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-size: 16px;
+}
+
+.w3-half img {
+  margin-bottom: -6px;
+  margin-top: 16px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.w3-half img:hover {
+  opacity: 1;
+}
+
+body, h1, h2, h3, h4, h5 {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+}
+
+.w3-half img {
+  margin-bottom: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.w3-half img:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+.custom-hr {
+  width: 50px;
+  border: 5px solid rgb(84, 9, 82);
+  margin: 20px 0;
+}
+
+.close-btn {
+  width: 100%;
+  font-size: 22px;
+}
+
+.w3-sidebar {
+  z-index: 3;
+  width: 300px;
+  font-weight: bold;
+}
+
+.w3-main {
+  margin-left: 340px;
+  margin-right: 40px;
+}
+.w3-light-grey img {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+.w3-light-grey img:hover {
+  filter: grayscale(0%);
+}
+.w3-light-grey img, .w3-row-padding img {
+  filter: none !important;
+  -webkit-filter: none !important;
+}

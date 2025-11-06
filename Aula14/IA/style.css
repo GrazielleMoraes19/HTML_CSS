@@ -1,0 +1,370 @@
+/* Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', 'Verdana', sans-serif;
+    line-height: 1.6;
+    color: #F8FAFC;
+    background-color: #0F172A;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabeçalho */
+.header {
+    background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-bottom: 3px solid #10B981;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #10B981 0%, #06B6D4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInDown 1s ease-out;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: #94A3B8;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+/* Menu de Navegação */
+.navigation {
+    background-color: #1E293B;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link {
+    color: #F8FAFC;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #10B981;
+    color: #0F172A;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
+}
+
+/* Conteúdo Principal */
+.main-content {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    width: 100%;
+}
+
+.content-section {
+    margin-bottom: 4rem;
+    animation: fadeIn 1s ease-out;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #10B981;
+    border-bottom: 3px solid #06B6D4;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.text-content {
+    background-color: #1E293B;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.text-content p {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    color: #E2E8F0;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.text-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Seção de Vídeos */
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.video-card {
+    background-color: #1E293B;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.2);
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.video-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-info {
+    padding: 1.5rem;
+}
+
+.video-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #10B981;
+}
+
+.video-description {
+    font-size: 1rem;
+    color: #94A3B8;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.video-author {
+    font-size: 0.95rem;
+    color: #06B6D4;
+    font-weight: 500;
+}
+
+/* Seção de Aplicações */
+.applications-container {
+    background-color: #1E293B;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.applications-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.application-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: #0F172A;
+    border-radius: 8px;
+    border-left: 4px solid #10B981;
+    transition: all 0.3s ease;
+}
+
+.application-item:hover {
+    transform: translateX(8px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+    border-left-color: #06B6D4;
+}
+
+.app-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.application-item div {
+    font-size: 1.1rem;
+    color: #E2E8F0;
+    line-height: 1.6;
+}
+
+.application-item strong {
+    color: #10B981;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #1E293B;
+    padding: 2rem;
+    text-align: center;
+    border-top: 3px solid #10B981;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto 1rem;
+}
+
+.footer-name,
+.footer-date,
+.footer-contact {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #E2E8F0;
+}
+
+.footer-link {
+    color: #10B981;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #06B6D4;
+    text-decoration: underline;
+}
+
+.footer-credits {
+    font-size: 0.95rem;
+    color: #94A3B8;
+    margin-top: 1rem;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Design Responsivo */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .navigation {
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .videos-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .text-content p,
+    .application-item div {
+        font-size: 1rem;
+    }
+
+    .main-content {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 3rem 1rem;
+    }
+
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .navigation {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+}

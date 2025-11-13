@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh;
+  background: #eee;
+}
+.box {
+  width: 100px;
+  height: 50px;
+  background: #ff8a65;
+  margin: 10px;
+  text-align: center;
+  line-height: 50px;
+}

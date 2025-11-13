@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+.box {
+  width: 80px;
+  height: 80px;
+  background: rgb(0, 0, 0);
+  color: antiquewhite;
+}

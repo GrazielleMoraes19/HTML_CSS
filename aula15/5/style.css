@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  width: 100%;
+}
+.item {
+  flex: 1;
+  background: #90caf9;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid white;
+}

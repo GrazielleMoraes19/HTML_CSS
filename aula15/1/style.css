@@ -1,0 +1,18 @@
+.container {
+    display: flex; 
+    justify-content:center; 
+    align-items: center; 
+    height: 100vh;
+
+}
+.item {
+    width: 100px; 
+    height: 100px; 
+    background-color: red; 
+    color: #ffffff; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    font-size: 50px;
+}

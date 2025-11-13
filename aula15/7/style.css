@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  justify-content: flex-end;
+}
+.box {
+  width: 80px;
+  height: 80px;
+  background: purple;
+  margin: 5px;
+}
